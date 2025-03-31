@@ -1,0 +1,279 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* 初始为透明 */
+    transition: background-color 0.5s; /* 添加过渡效果 */
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 8% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 60%; /* 弹窗内容高度为200px */
+    transform: translateX(-120%); /* 初始位置在左边 */
+  }
+  .modal.show {
+    animation: in 0.5s forwards;
+  }
+  .modal.hide {
+    animation: out 0.5s forwards;
+  }
+  @keyframes in {
+    0% { background-color: rgba(0, 0, 0, 0); }
+    100% { background-color: rgba(0, 0, 0, 0.6) }
+  }
+  @keyframes out {
+    0% { background-color: rgba(0, 0, 0, 0.6) }
+    100% { background-color: rgba(0, 0, 0, 0); }
+  }
+  .modal-content.show {
+    animation: slide-in 0.5s forwards;
+  }
+  .modal-content.hide {
+    animation: slide-out 0.5s forwards;
+  }
+  @keyframes slide-in {
+    0% { transform: translateX(-120%); }
+    100% { transform: translateX(0); }
+  }
+  @keyframes slide-out {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(120%); }
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+  } /* 遮罩层样式 */
+   #overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  /* 弹窗主体样式 */
+  .popup {
+    background-color: #fff;
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  .video-background {
+              transform:translate(-50%,-50%);
+            position: fixed;
+            left:50%; 
+            top:50%;
+            min-width: 100%; 
+            max-height: 100%;
+            width: auto; 
+            height: auto; 
+            z-index: -1000;
+            object-fit: cover; /* 添加这一行 */
+        }
+        body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .background {
+      /* 替换为你的图片URL */
+      background-image: url('水印？.png');
+      /* 图片自动重复 */
+      background-repeat: repeat;
+      /* 设置背景层的位置 */
+      position: fixed; 
+      width: 100%;
+      height: 100%;
+      /* 将背景层置于其他内容之下 */
+      z-index: -1; 
+  }
+  body , html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-x:center;
+   background-position-y: 20%;
+  }
+  body::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.34); /* 这里的 rgba(0, 0, 0, 0.5) 是半透明的黑色，您可以根据需要更改颜色和透明度 */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;  
+  }
+  img{border-radius: 17px;min-width: 120px;max-width:400px;max-height:400px;min-height: 240px;border:2px solid #a1a1a1;object-fit:cover}
+  #test2{display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px auto;
+            border-radius: 20px; padding: 1px;
+          max-width: 400px;
+        max-height: 100px;}
+  .h4 {
+  margin:0px 18%;
+  color: rgb(197, 255, 246);
+  text-align: center;
+  border-radius: 70px 152px;
+  box-shadow: 15px 15px 10px #222121f3;
+  padding: 1px;
+  max-width: 300px;
+  margin: auto;
+  background-color: rgba(255, 130, 130, 0.664);
+  }
+  .css{display: flex;
+    justify-content: center;
+    align-items: center;}
+  .p1{
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 15px 15px 10px #222121f3;
+  margin: 10px 5%;
+  padding: 30px;
+  color: aliceblue;
+  text-align: left;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #626262be;
+  }
+  .p2{
+  text-align: center;
+  background-color: rgba(91, 251, 23, 0.468);
+  padding: 10px 30px;
+  border-radius: 80px;
+  font-size: 14px;
+  font-weight:500;
+  max-width: 450px;
+  margin: auto
+  }
+  li{
+  text-align: left;
+  }
+  .a{color:rgb(246, 255, 0)}
+  a:hover {color: #1eff00;}
+  button{background-color: rgb(0, 0, 0);
+  border-radius: 100px;
+  color: white;
+  cursor: pointer;
+  padding: 12px 12px;
+  font-size: 10px;}
+  .lg{align-content: center;justify-content: center; width: 50%;text-align: center;background-color: dodgerblue;margin-left: 30px;margin-right: 30px;border-radius:90px ;}
+  
+  button:hover{background-color: grey;}
+  @keyframes blink {
+            0% {color: white;}
+            50% {color: yellow;}
+            100% {color: white;}
+        }
+        .highlight {
+            animation: blink 0.3s 6;
+            color: yellow;
+        }
+        .normal {
+            animation: none;
+            color: white;
+        }
+  @media screen and (max-width: 600px) {
+  body {
+    font-size: 16px; /* 在小屏设备上增大字体大小 */
+  }
+  }
+  /* 弹窗的基本样式 */
+        .modal {
+            display: none; /* 默认隐藏弹窗 */
+            position: fixed; /* 固定定位 */
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 300px;
+            max-height: 100px;/* 弹窗宽度 */
+            background-color: white; /* 弹窗背景颜色 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            border-radius: 10px; /* 圆角边框 */
+            padding: 20px; /* 内边距 */
+            z-index: 1000; /* 确保弹窗在最上层 */
+        }
+  
+        /* 显示弹窗时的背景遮罩 */
+        .modal-backdrop {
+            display: none; /* 默认隐藏背景遮罩 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* 半透明背景 */
+            z-index: 999; /* 在弹窗下一层 */
+        }
+        /* 显示弹窗和背景遮罩的类 */
+        .show {
+            display: block;
+        }
+        .fwq{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px auto;font-size:16px;background-color:rgb(76, 168, 248)
+        }
+        #cardPopup{display: block; 
+        color: black;
+        position: fixed;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);}
+          .news
+          {background-color: #fff;
+    width: 70%;
+    height: 50%;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 5px;}
+    /*-------------------------------------------------------0*/
+  body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .background {
+      /* 替换为你的图片URL */
+      background-image: url('水印？.png');
+      /* 图片自动重复 */
+      background-repeat: repeat;
+      /* 设置背景层的位置 */
+      position: fixed; 
+      width: 100%;
+      height: 100%;
+      /* 将背景层置于其他内容之下 */
+      z-index: -1; 
+  }
