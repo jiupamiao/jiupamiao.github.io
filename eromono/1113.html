@@ -3,9 +3,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="1.ico" type="image/x-icon">
-<link rel="stylesheet" href="1.css">
-  <title>h文2(下)-玖帕喵</title>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+    <link rel="stylesheet" href="1.css">
+  <title>h文2（下）-玖帕喵</title>
+        <script>
+        function checkPassword() {
+            const storedPasswordCheck = sessionStorage.getItem('passwordVerified');
+            if (!storedPasswordCheck) { 
+                const password = prompt("请输入密码:");
+                if (password === "IFX40771") {
+                    sessionStorage.setItem('passwordVerified', true); // 标记验证成功
+                    document.getElementById('protectedContent').style.display = 'block'; // 显示内容
+                } else {
+                    alert("密码错误，即将返回首页");
+                    window.location.href = "https://jiupamiao.github.io"; // 重定向到主页
+                }
+            } else {
+                document.getElementById('protectedContent').style.display = 'block'; // 显示内容
+            }
+        }
+    </script>
+    <style>
+        #protectedContent {
+            display: none; /* 初始隐藏内容 */
+        }
+    </style>
   <style>
   .p1{
 margin: auto;
@@ -18,15 +40,16 @@ text-align: left;
 max-width: 1000px;
 margin: auto;
 background-color: #626262be;
-}li{
+}
+li{
     margin:13px;
     text-align: left;
     list-style-type: a;
     }
-}</style>
+</style>
 </head>
 
-<body>
+<body onload="checkPassword()">
         <!-- 在body标签的开始添加video标签 -->
         <video autoplay loop muted class="video-background">
             <source src="2.mp4" type="video/mp4">
