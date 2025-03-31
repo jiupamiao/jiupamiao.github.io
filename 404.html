@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://jiupanmiao.asia/favicon.ico">
+    <link rel="stylesheet" href="https://jiupanmiao.asia/1.css">
+    <title>找不到页面啦！</title>
+
+</head>
+<body>
+
+    <video autoplay loop muted class="video-background">
+            <source src="2.mp4" type="video/mp4">
+        </video>
+        <a href="https://jiupanmiao.asia"> <button>主页</button></a>
+        <div class="h4">
+          <h1>404</h1>
+          <h3 class="h44">EEEEEEEERROR</h3>
+          <p class="h44">ERROR:NOT FOUND
+          </p>
+      </div>
+      <div class="主题背景">
+          <div class="garbled" id="garbledText" style="
+              text-align:center;
+              white-space: pre; /* 保持换行 */
+            "></div>
+      
+          <script>
+            function generateGarbledText(length, characters) {
+              let result = '';
+              const charactersLength = characters.length;
+              for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+              }
+              return result;
+            }
+        
+            function updateGarbledText() {
+              const garbledTextElement = document.getElementById('garbledText');
+              const lines = [
+                { length: 10, characters: '致命错误：无法找到目标网页！' },
+                { length: 10, characters: 'FATALERROR:THETARGETPAGECOULDNOTBEFOUND!' },
+                { length: 10, characters: 'フェイタルエラー：ターゲットページが見つかりません' },
+                { length: 20, characters: '!@#$%^&*()_+-=[]{}|;:,.<>?/' }
+              ];
+              let garbledText = '';
+              lines.forEach(line => {
+                garbledText += generateGarbledText(line.length, line.characters) + '\n';
+              });
+              garbledTextElement.textContent = garbledText;
+            }
+        
+            setInterval(updateGarbledText, 70); // 每500毫秒更新一次
+          </script>
+          <div class="主题内部">请联系管理员查询原因</div>
+      </div>
+        <a href="https://qm.qq.com/q/4yM9txAh5" target="_blank" rel="noreferrer noopener"><button style="z-index: -100;">添加QQ</button></a><script src="https://jiupanmiao.asia/1.js" type="text/javascript" charset="utf-8"></script>
+    </div>
+    </body>
