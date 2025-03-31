@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>影院欢迎词~</title>
+<style> 
+
+body {
+    overflow: hidden;
+}
+
+#aabac {
+  animation: 0.75s blink step-end infinite;
+}
+@keyframes blink {
+  50% {color:transparent ; }
+}
+
+.background {
+text-align: left;
+  background: linear-gradient(to right,  
+  rgb(56, 205, 183),
+   rgb(136, 205, 132),
+    rgb(255, 186, 66),
+	rgba(255, 123, 41, 0.821), 
+	rgb(255, 93, 93),
+	rgb(204, 102, 255),
+	rgb(76, 169, 255), 
+	rgb(63, 205, 226),
+	rgb(76, 169, 255), 
+	rgb(204, 102, 255),
+	rgb(255, 93, 93),
+	rgba(255, 123, 41, 0.821), 
+	rgb(255, 186, 66),
+	rgb(136, 205, 132),
+	rgb(56, 205, 183)
+	);
+  background-size: 400% 100%;
+  width: 200%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;;
+}
+
+@keyframes 变色 {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+.background {
+  animation: 变色 30s linear infinite;
+}
+.b {
+	overflow: hidden;
+  font-size: 50px;
+  color: white;
+  z-index: 1;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+  align-items:end;
+  height: 40vh;}
+
+.bb {
+	animation: blink 1s ease infinite;
+	text-align: center;
+	display: block;
+	color: white;
+}
+.bb2 {
+	animation: blink 1s ease infinite;
+	text-align: center;
+	display: block;
+	color: rgb(0, 0, 0);}
+.color-1 {
+  color: rgb(0, 0, 0);
+}
+
+.color-2 {
+  color: rgb(255, 255, 255);
+}
+button {
+  position: fixed;
+top: 20px;
+  left: 20px;
+  padding: 10px 10px;
+  background-color: white;
+  border: none;
+  border-radius: 120px;
+  font-size: 10px;
+  cursor: pointer;
+  color: black;
+}
+	</style>
+</head>
+<body style="background-color: white;">
+	
+<div class="background" style="z-index: -1;"></div>
+<p class="b"><a id="打字效果"></a></p>
+<b class="bb" id="bb" style="font-size:15px"><span>　　点击猫猫关闭此界面<br>　　　 　　／＞一　フ<br>　　　 　　| 　_　 _ l<br>　 　　 　／` ミ＿xノ<br>　　 　 /　　　 　 |<br>　　　 /　 ヽ　　 ﾉ<br>　 　 │　　|　|　|<br>　／￣|　　 |　|　|<br>　| (￣ヽ＿_ヽ_)__)<br>　＼二つ</span></b>
+<button id="bt">颜色切换</button>
+	<script>
+		var 打字效果 = ['欢迎来到~玖帕喵~', '~我还想说什么来着？~'];
+		var element = document.getElementById('打字效果');
+		var wordIndex = 0;
+		var 打字效果Index = 0;
+		var reverse = false;
+		
+		function typeWriter()
+		{
+		  if (reverse)
+		  {
+			if (wordIndex == 0) 
+			{
+			  reverse = false;
+			  打字效果Index = (打字效果Index + 1) % 打字效果.length;
+			  setTimeout(typeWriter, 300);
+			} else 
+			{
+			  element.innerHTML = 打字效果[打字效果Index].substring(0, wordIndex-1)+'<span class="aabac" id="aabac">|</span>';
+			  wordIndex--;
+			  setTimeout(typeWriter, 100);
+			}
+		  } else 
+		  {
+			if (wordIndex == 打字效果[打字效果Index].length)
+			{
+			  reverse = true; 
+			  setTimeout(typeWriter, 2000);
+			} else 
+			{
+			  element.innerHTML = 打字效果[打字效果Index].substring(0, wordIndex+1)+'<span class="aabac" id="aabac">|</span>' ;
+			  wordIndex++;
+			  setTimeout(typeWriter, 100);
+			}
+		  }
+		}
+		typeWriter();
+document.addEventListener("DOMContentLoaded", function()
+{
+  var colorToggleButton = document.getElementById("bt");
+  var textElement = document.getElementById("打字效果");
+  var bbElement = document.getElementById("bb");
+  var btElement = document.getElementById("bt");
+
+
+  colorToggleButton.addEventListener("click", function()
+  {
+    var currentClass = textElement.classList.contains("color-1") ? "color-2" : "color-1";
+    textElement.classList.remove("color-1", "color-2");
+    textElement.classList.add(currentClass);
+
+    if (bbElement.style.color === 'black') 
+    {
+      bbElement.style.color = 'white';
+    } else {
+      bbElement.style.color = 'black';
+    }
+	   if (btElement.style.color === 'white') 
+    {
+      btElement.style.color = 'black';
+	  btElement.style.backgroundColor = 'white';
+    } else {
+      btElement.style.color = 'white';
+	  btElement.style.backgroundColor = 'black';
+    }
+  });
+});
+
+	</script>
+
+</body>
+</html>
