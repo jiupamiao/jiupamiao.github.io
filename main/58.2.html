@@ -12,8 +12,8 @@
         function checkPassword() {
             const storedPasswordCheck = sessionStorage.getItem('aved');
             if (!storedPasswordCheck) { 
-                const password = prompt("请输入密码:（详见送礼后，在“消息”里的回复信息）");
-                if (password === "INFc3") {
+                const password = prompt("请输入密码:（详见上一页最后四个字（不带标点符号不是未完待续！））");
+                if (password === "依的裤子") {
                     sessionStorage.setItem('aved', true); // 标记验证成功
                     document.getElementById('avea').style.display = 'block'; // 显示内容
                 } else {
