@@ -118,7 +118,7 @@ top: 20px;
 			{
 			  reverse = false;
 			  打字效果Index = (打字效果Index + 1) % 打字效果.length;
-			  setTimeout(typeWriter, 300);
+			  setTimeout(typeWriter, 300);/*此行代码为打字效果结束后的停顿时间*/
 			} else 
 			{
 			  element.innerHTML = 打字效果[打字效果Index].substring(0, wordIndex-1)+'<span class="aabac" id="aabac">|</span>';
@@ -130,7 +130,7 @@ top: 20px;
 			if (wordIndex == 打字效果[打字效果Index].length)
 			{
 			  reverse = true; 
-			  setTimeout(typeWriter, 2000);
+			  setTimeout(typeWriter, 1000);
 			} else 
 			{
 			  element.innerHTML = 打字效果[打字效果Index].substring(0, wordIndex+1)+'<span class="aabac" id="aabac">|</span>' ;
