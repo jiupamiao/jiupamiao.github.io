@@ -1,21 +1,16 @@
 html{scroll-behavior:smooth;
 }
-
-.tooltip{position: absolute;
-padding: 5px;
-display: none;
-pointer-events: none;
-transform: translate(-50%, 50%);
-background-color: rgba(0,0,0,0.5);
-color: white;
-border-radius: 5px;
-font-size: 14px;
-line-height: 1.4;
-font-weight: 400;
-text-align: center;
-white-space: nowrap;
-z-index: 1000;
-transition: all 0.3s ease-in-out;    
+.background {
+    /* 替换为你的图片URL */
+    background-image: url('/水印？.png');
+    /* 图片自动重复 */
+    background-repeat: repeat;
+    /* 设置背景层的位置 */
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    /* 将背景层置于其他内容之下 */
+    z-index: -1; 
 }
 .video-background{transform:translate(-50%,-50%);
 position:fixed;
@@ -27,7 +22,6 @@ width:auto;
 height:auto;
 z-index:-1000;
 object-fit:cover;
-    
 }
 body{background-image: url('1.png');
 background-size: cover;
@@ -42,7 +36,6 @@ background-attachment:fixed;
 background-size:cover;
 background-position-x:center;
 background-position-y:20%;
-    
 }
 body::after{content:"";
 background:rgba(0,0,0,0.34);
@@ -55,7 +48,6 @@ z-index:-1;
     
 }
 a{text-decoration:none;
-
 }
 a:hover{text-decoration:none;
 color:aqua;
@@ -92,24 +84,7 @@ transition:all 0.3s ease-in-out;
     opacity:1;
 transition: all 0.3s ease-in-out;
 }
-.h45
-{
-color:white;
-position: absolute;
-pointer-events: none;
-text-align: center;
-white-space: nowrap;
-z-index: 1000;
-justify-self: center;
-bottom: 1px;
-transition: all 0.3s ease-in-out;
-}
-.h4:hover .h45
-{
-opacity:0;
-transition: all 0.3s ease-in-out;
 
-}
 .主题背景{background-color:rgba(225,225,225,0.637);
 border-radius:30px 30px ;
 align-items:center ;
@@ -132,10 +107,10 @@ padding:10px ;
 color:#fffffff3;
     
 }
+ul
+
 li{text-align:left;
-margin-left:20px ;
-margin-top:1px ;
-margin-bottom:1px ;
+margin: 1px 3px;
 list-style-type:square;
     
 }
@@ -161,22 +136,36 @@ button:active{background-color:#989898;
 color:black;
     
 }
-#loading {position: fixed;
-width: 170%;
-height: 170%;
-top: -35%;
-left:-35%;
-background: rgb(120, 118, 118);
-background-image:url('1.png');
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center center;
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 24px;
+
+iframe {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    }
+    .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* 确保覆盖在iframe上 */
+    pointer-events: none; /* 使div本身不可交互 */
+    }
+    .overlay-content {
+    pointer-events: auto; /* 使子元素可交互 */
+    }
+    #cat{
+    text-align: center;
+    /*让元素位于页面底部*/
+    position: fixed;
+    bottom: 0;
+    margin-left: 20%;
+    background-color: rgba(62, 115, 162, 0);
+    width: 70%;
+    height: 50%;
+    }
     
-}
-#content {display: none;
     
-}
