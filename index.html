@@ -1,48 +1,78 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
 <head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
-    <link rel="stylesheet" href="1.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="q.css">
     <title>玖帕喵</title>
-    <style>
-    a{color:white}
-    </style>
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
 </head>
-<body><iframe src="11.html" frameborder="0" style="z-index:1"></iframe>
-    <div class="overlay">
-        <div class="overlay-content">
-            <div id="cat" style="z-index:101"></div>
-        </div>
-    </div>
-    <script>
-        document.getElementById("cat").addEventListener("click", function() {
-            document.querySelector("iframe").style.display = "none";
-            document.getElementById("cat").style.display = "none";
-        })
-    </script>
+<body>
+    <iframe src="11.html" frameborder="0" style="z-index:1"></iframe>
+    <div id="cat" style="z-index:101"></div>
     <video autoplay loop muted class="video-background">
             <source src="2.mp4" type="video/mp4">
         </video>
-
-<div class="h4">
-    <h1>玖帕喵</h1>
-    <p class="h44">个人网站，重新尝试做了一下，有点菜</p>
+    <div class="overlay">
 </div>
-<div class="主题背景">
-    <div class="主题内部">
-        <ul>
-            <li><a href="https://fanqienovel.com/author-page/1802800005645675-7383503507598349593" target="_blank">这里是作者的番茄小说主页</a></li>
-            <li><a href="/main">这里是因为审核不给过的东西</a></li>
-            上述内容点击即可跳转
-        </ul>
+
+    <div class="container">
+        <header>
+            <h1>玖帕喵个人网站</h1>
+            <h2 style="text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);">鹿茗躺平啦</h2>
+            <a href="https://jiupamiao.asia"><button>主页</button></a>
+        </header>
+
+        <div class="card">
+            <h2>可用内容</h2>
+            <p>点击查看对应内容的详情</p>
+            
+            <ul class="tools-list">
+                <a href="#openModal"><li id="openModal">>打赏通道——<</li></a>
+                <a href="https://fanqienovel.com/author-page/1802800005645675-7383503507598349593" target="_blank"><li>>作者番茄小说主页<</li></a>
+                <a href="/main"><li>>不过审内容<</li></a>
+                <a href="https://jiupamiao.asia/"><li>>作者的其他网站<</li></a>
+
+            </ul>
+        </div>
     </div>
-<div style="margin-top: 50px;">怎么说呢，我不想做个什么博客之类的东西，所以只能在静态网页里写点没法交互的文啦，希望大伙玩的开心吧？
-</div>
-</div>
-
-<a href="https://qm.qq.com/q/4yM9txAh5" target="_blank" rel="noreferrer noopener"><button style="z-index: -100;">添加QQ</button></a>
-<script src="1.js" type="text/javascript" charset="utf-8"></script>
-
+<script>  document.getElementById("cat").addEventListener("click", function() {
+            document.querySelector("iframe").style.display = "none";
+            document.getElementById("cat").style.display = "none";
+        })</script>
+    <!-- MC整合包弹窗 -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>打赏通道——</h2>
+            
+            <div class="download-options">
+                <div>如果你喜欢我写的小说的话，可以从在这里打赏哦~</div>
+            </div>
+            
+            <div class="instructions">
+                <h3>打赏说明</h3>
+                <p>除了番茄小说中的打赏之外，你还可以在这里打赏。</p>
+                <br><b>在这里打赏的好处有：</b>
+                <ol>
+                    <li>可以让作者第一时间得到打赏消息</li>
+                    <li>打赏可以备注消息，并且可以得到作者回复</li>
+                    <li>打赏金额不会被平台抽成（bushi）</li>
+                    <li>可以定制特殊内容。打赏30及以上挡位，可以根据备注定制特别章节，也包括R18</li>
+                </ol>
+                <p><strong>在这：</strong><img src="da.jpg"></p>        
+            </div>
+        </div>
     </div>
+
+    <script src="q.js"></script>
 </body>
+</html>
